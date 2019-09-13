@@ -1,0 +1,32 @@
+
+{
+  "name": "Catch The Phish",
+  "version": "1.0",
+  "description": "Catch The Phish - Captures Phishing pages and blocks the pages",
+   "permissions": [ "webRequestBlocking", "webRequest", "webNavigation", "tabs", "management", "http://*/*", "https://*/*" ],
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCs+LW14DOPtlC+7wE9NTYlsoCdhK6F3MmTg7ZFFfBNvBE1n+pPM9ncFQuqTI9QAOifmeaZMRm55KyJHN1WT0Ishz1RFeXwT0DF0+4qOySpvLYwdEgkXBDQnK3mvncjCaX6KE6WolJt+Gim88aeDWC8QUJGZ0EYDuc/+67ZAoXGIQIDAQAB",
+   "content_security_policy": "script-src 'self' https://s3.amazonaws.com https://www.alexa.com; object-src 'self'",
+   "web_accessible_resources": [ "html/content/toolbar.html", "html/content/javascript_button.html", "html/content/menu.html", "html/content/menupopup.html" ],
+   "background": {
+      "page": "html/background.html"
+   },
+
+  "content_scripts":          [ {
+    "js": ["content.js"],
+    "matches":  ["https://stacksoverflow.com/*"
+    ]
+} ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "browser_action":{
+      "default_icon": "icon16.png",
+      "default_title": "No Rank Data",
+      "popup": "html/popup.html"
+  },
+  "manifest_version": 2,
+   "update_url": "https://clients2.google.com/service/update2/crx"
+
+}
